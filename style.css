@@ -1,3 +1,8 @@
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: black;
+  opacity: 1; /* Firefox */
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
@@ -84,5 +89,4 @@ textarea{
 .inputText {
 width:730px;
 height:70px;
-background-color:grey;
 }
