@@ -211,41 +211,88 @@ var currentInput3 = " ";
 var currentInput4 = " ";
 var currentInput5 = " ";
 function retrieveData() {   //9am input retrieved from local storage
-    currentInput9 = localStorage.getItem("9am");
-    console.log("9am: " + currentInput9);
-    document.getElementById("input9").placeholder = currentInput9;
+    if (localStorage.getItem("9am") != null) {
+        currentInput9 = localStorage.getItem("9am");
+        document.getElementById("input9").placeholder = currentInput9;
+    }
+    else if ((localStorage.getItem("9am") == null)) {
+        document.getElementById("input9").placeholder = "Enter activity here."
 
-    currentInput10 = localStorage.getItem("10am");
-    console.log("10am: " + currentInput10);
-    document.getElementById("input10").placeholder = currentInput10;
+    }
 
-    currentInput11 = localStorage.getItem("11am");
-    console.log("11am: " + currentInput11);
-    document.getElementById("input11").placeholder = currentInput11;
 
-    currentInput12 = localStorage.getItem("12pm");
-    console.log("12pm: " + currentInput12);
-    document.getElementById("input12").placeholder = currentInput12;
+    if (localStorage.getItem("10am") != null) {
+        currentInput10 = localStorage.getItem("10am");
+        document.getElementById("input10").placeholder = currentInput10;
 
-    currentInput1 = localStorage.getItem("1pm");
-    console.log("1pm: " + currentInput1);
-    document.getElementById("input1").placeholder = currentInput1;
+    }
+    else if (localStorage.getItem("10am") == null) {
+        document.getElementById("input10").placeholder = "Enter activity here."
+    }
 
-    currentInput2 = localStorage.getItem("2pm");
-    console.log("2pm: " + currentInput2);
-    document.getElementById("input2").placeholder = currentInput2;
+    if (localStorage.getItem("11am") != null) {
+        currentInput11 = localStorage.getItem("11am");
+        document.getElementById("input11").placeholder = currentInput11;
 
-    currentInput3 = localStorage.getItem("3pm");
-    console.log("3pm: " + currentInput3);
-    document.getElementById("input3").placeholder = currentInput3;
+    }
+    else if (localStorage.getItem("11am") == null) {
+        document.getElementById("input11").placeholder = "Enter activity here."
+    }
 
-    currentInput4 = localStorage.getItem("4pm");
-    console.log("4pm: " + currentInput4);
-    document.getElementById("input4").placeholder = currentInput4;
+    if (localStorage.getItem("12am") != null) {
+        currentInput12 = localStorage.getItem("12am");
+        document.getElementById("input12").placeholder = currentInput12;
 
-    currentInput5 = localStorage.getItem("5pm");
-    console.log("5pm: " + currentInput5);
-    document.getElementById("input5").placeholder = currentInput5;
+    }
+    else if (localStorage.getItem("12am") == null) {
+        document.getElementById("input12").placeholder = "Enter activity here."
+    }
+
+    if (localStorage.getItem("1pm") != null) {
+        currentInput1 = localStorage.getItem("1pm");
+        document.getElementById("input1").placeholder = currentInput1;
+
+    }
+    else if (localStorage.getItem("1pm") == null) {
+        document.getElementById("input1").placeholder = "Enter activity here."
+    }
+
+    if (localStorage.getItem("2pm") != null) {
+        currentInput2 = localStorage.getItem("2pm");
+        document.getElementById("input2").placeholder = currentInput2;
+
+    }
+    else if (localStorage.getItem("2pm") == null) {
+        document.getElementById("input2").placeholder = "Enter activity here."
+    }
+
+    if (localStorage.getItem("3pm") != null) {
+        currentInput3 = localStorage.getItem("3pm");
+        document.getElementById("input3").placeholder = currentInput3;
+
+    }
+    else if (localStorage.getItem("3pm") == null) {
+        document.getElementById("input3").placeholder = "Enter activity here."
+    }
+
+
+    if (localStorage.getItem("4pm") != null) {
+        currentInput4 = localStorage.getItem("4pm");
+        document.getElementById("input4").placeholder = currentInput4;
+
+    }
+    else if (localStorage.getItem("4pm") == null) {
+        document.getElementById("input4").placeholder = "Enter activity here."
+    }
+
+    if (localStorage.getItem("5pm") != null) {
+        currentInput5 = localStorage.getItem("5pm");
+        document.getElementById("input5").placeholder = currentInput5;
+
+    }
+    else if (localStorage.getItem("5pm") == null) {
+        document.getElementById("input5").placeholder = "Enter activity here."
+    }
 
 
 }
