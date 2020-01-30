@@ -134,61 +134,118 @@ function checkTime() {
 
 }
 
-//event listener for input -> local storage saving
+//event listener for btn click -> local storage saving
 $("#btn9").on("click", function () {
     //localStorage.setItem("lastname", "Smith");
 
     localStorage.setItem("9am", document.getElementById("input9").value);
 
-    localStorage.setItem("10am", document.getElementById("input10").value);
 });
+
+$("#btn10").on("click", function () {
+    //localStorage.setItem("lastname", "Smith");
+
+    localStorage.setItem("10am", document.getElementById("input10").value);
+
+});
+
+$("#btn11").on("click", function () {
+    //localStorage.setItem("lastname", "Smith");
+
+    localStorage.setItem("11am", document.getElementById("input11").value);
+
+});
+
+$("#btn12").on("click", function () {
+    //localStorage.setItem("lastname", "Smith");
+
+    localStorage.setItem("12pm", document.getElementById("input12").value);
+
+});
+
+$("#btn1").on("click", function () {
+    //localStorage.setItem("lastname", "Smith");
+
+    localStorage.setItem("1pm", document.getElementById("input1").value);
+
+});
+
+$("#btn2").on("click", function () {
+    //localStorage.setItem("lastname", "Smith");
+
+    localStorage.setItem("2pm", document.getElementById("input2").value);
+
+});
+
+$("#btn3").on("click", function () {
+    //localStorage.setItem("lastname", "Smith");
+
+    localStorage.setItem("3pm", document.getElementById("input3").value);
+
+});
+
+$("#btn4").on("click", function () {
+    //localStorage.setItem("lastname", "Smith");
+
+    localStorage.setItem("4pm", document.getElementById("input4").value);
+
+});
+$("#btn5").on("click", function () {
+    //localStorage.setItem("lastname", "Smith");
+
+    localStorage.setItem("5pm", document.getElementById("input5").value);
+
+});
+
+
+
 
 //function to retrieve saved data to local storage
 var currentInput9 = "";
 var currentInput10 = "";
-// var currentInput11 = "";
-// var currentInput12 = "";
-// var currentInput1 = "";
-// var currentInput2 = "";
-// var currentInput3 = "";
-// var currentInput4 = "";
-// var currentInput5 = "";
-function retrieveData() {   //problem not working
+var currentInput11 = "";
+var currentInput12 = "";
+var currentInput1 = "";
+var currentInput2 = "";
+var currentInput3 = "";
+var currentInput4 = "";
+var currentInput5 = "";
+function retrieveData() {   //9am input retrieved from local storage
     currentInput9 = localStorage.getItem("9am");
     console.log("9am: " + currentInput9);
     document.getElementById("input9").placeholder = currentInput9;
 
-    currentInput9 = localStorage.getItem("10am");
+    currentInput10 = localStorage.getItem("10am");
     console.log("10am: " + currentInput10);
     document.getElementById("input10").placeholder = currentInput10;
 
-    // currentInput9 = localStorage.getItem("11am");
-    // console.log("11am: " + currentInput11);
-    // document.getElementById("input11").placeholder = currentInput11;
+    currentInput11 = localStorage.getItem("11am");
+    console.log("11am: " + currentInput11);
+    document.getElementById("input11").placeholder = currentInput11;
 
-    // currentInput9 = localStorage.getItem("12pm");
-    // console.log("12pm: " + currentInput12);
-    // document.getElementById("input12").placeholder = currentInput12;
+    currentInput12 = localStorage.getItem("12pm");
+    console.log("12pm: " + currentInput12);
+    document.getElementById("input12").placeholder = currentInput12;
 
-    // currentInput9 = localStorage.getItem("1pm");
-    // console.log("1pm: " + currentInput1);
-    // document.getElementById("input1").placeholder = currentInput1;
+    currentInput1 = localStorage.getItem("1pm");
+    console.log("1pm: " + currentInput1);
+    document.getElementById("input1").placeholder = currentInput1;
 
-    // currentInput9 = localStorage.getItem("2pm");
-    // console.log("2pm: " + currentInput2);
-    // document.getElementById("input9").placeholder = currentInput2;
+    currentInput2 = localStorage.getItem("2pm");
+    console.log("2pm: " + currentInput2);
+    document.getElementById("input2").placeholder = currentInput2;
 
-    // currentInput9 = localStorage.getItem("3pm");
-    // console.log("3pm: " + currentInput3);
-    // document.getElementById("input3").placeholder = currentInput3;
+    currentInput3 = localStorage.getItem("3pm");
+    console.log("3pm: " + currentInput3);
+    document.getElementById("input3").placeholder = currentInput3;
 
-    // currentInput9 = localStorage.getItem("4pm");
-    // console.log("4pm: " + currentInput4);
-    // document.getElementById("input9").placeholder = currentInput4;
+    currentInput4 = localStorage.getItem("4pm");
+    console.log("4pm: " + currentInput4);
+    document.getElementById("input4").placeholder = currentInput4;
 
-    // currentInput9 = localStorage.getItem("5pm");
-    // console.log("5pm: " + currentInput5);
-    // document.getElementById("input5").placeholder = currentInput5;
+    currentInput5 = localStorage.getItem("5pm");
+    console.log("5pm: " + currentInput5);
+    document.getElementById("input5").placeholder = currentInput5;
 
 
 }
