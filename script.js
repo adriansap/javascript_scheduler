@@ -38,7 +38,7 @@ function checkTime() {
 
 
     if (isItPmConcat == "pm" && isIt6pm == "yes") { //if pm, then all divs are grey [****!important not working]
-        $("#9,#10,#11,#12,#1,#2,#3,#4,#5").css('background-color:grey', '!important');//make all grey}
+        $("#9,#10,#11,#12,#1,#2,#3,#4,#5").css('background-color', 'grey !important');//make all grey}
         //set that it's past five
         var isItPast5 = "yes";
     }
