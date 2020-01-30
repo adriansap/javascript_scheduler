@@ -201,15 +201,15 @@ $("#btn5").on("click", function () {
 
 
 //function to retrieve saved data to local storage
-var currentInput9 = "";
-var currentInput10 = "";
-var currentInput11 = "";
-var currentInput12 = "";
-var currentInput1 = "";
-var currentInput2 = "";
-var currentInput3 = "";
-var currentInput4 = "";
-var currentInput5 = "";
+var currentInput9 = " ";
+var currentInput10 = " ";
+var currentInput11 = " ";
+var currentInput12 = " ";
+var currentInput1 = " ";
+var currentInput2 = " ";
+var currentInput3 = " ";
+var currentInput4 = " ";
+var currentInput5 = " ";
 function retrieveData() {   //9am input retrieved from local storage
     currentInput9 = localStorage.getItem("9am");
     console.log("9am: " + currentInput9);
