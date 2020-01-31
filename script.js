@@ -1,4 +1,4 @@
-retrieveData(); //to retrieve data from local storage to input field [NOT WORKING!]
+retrieveData(); //to retrieve data from local storage to input field 
 
 
 //time with second update using timer , 1000 millisecond
@@ -45,7 +45,7 @@ function checkTime() {
     }
 
 
-    if (isItPmConcat === "pm" && isIt6pm === "yes") { //if pm, then all divs are grey [****!important not working]
+    if (isItPmConcat === "pm" && isIt6pm === "yes") { //if pm and 6pm, then all divs are grey 
         console.log("!!!!!!!!!!!")
         $("#9,#10,#11,#12,#1,#2,#3,#4,#5").css('background-color', 'grey');//make all grey
         $("#input9,#input10, #input11, #input12, #input1, #input2, #input3, #input4, #input5").css('background-color', 'grey');
