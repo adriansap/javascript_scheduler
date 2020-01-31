@@ -1,3 +1,4 @@
+retrieveData(); //to retrieve data from local storage to input field [NOT WORKING!]
 
 
 //time with second update using timer , 1000 millisecond
@@ -7,9 +8,8 @@ function setTime() {
         $("#currentDay").text(moment().format('MMMM Do YYYY, h:mm:ss a'));
 
         checkTime(); // check time and run function to update colors
-        retrieveData(); //to retrieve data from local storage to input field [NOT WORKING!]
 
-    }, 1000); // the timer goes on indefinitely, that's why when secondsLeft == 0 then clearInterval(timerInterval);
+    }, 1000); // the timer goes on indefinitely, that's why when secondsLeft === 0 then clearInterval(timerInterval);
     //shuts the timer
 }
 
@@ -22,7 +22,7 @@ var currentTime = ""; //set currentTime as a string.
 function checkTime() {
 
     var currentTime = moment().format('LT');
-    if (currentTime[1] == ":") {
+    if (currentTime[1] === ":") {
         var currentHour = currentTime[0]; //first index is the hour number
     }
     else if (currentTime[1] != ":") {
@@ -32,22 +32,33 @@ function checkTime() {
     isItPmConcat = isItPm[27] + isItPm[28]; //extract pm
     console.log("PM: " + isItPmConcat)
 
+    var isIt6pm;
+
     //to find out if it's 6pm, schedule is over
-    if (currentHour == 6) { var isIt6pm = "yes"; }
-    else if (currentHour != 6) { var isIt6pm = "no"; }
+    // if current our is (greather than 5 && its pm) || if its (less than 9 && am) 
+    if ((currentHour > 5 && isItPmConcat === "pm") || (currentHour < 9 && isitPmConcat !== "pm")) {
+        // if (currentHour === 6) {
+        isIt6pm = "yes";
+    }
+    else {
+        isIt6pm = "no";
+    }
 
 
-    if (isItPmConcat == "pm" && isIt6pm == "yes") { //if pm, then all divs are grey [****!important not working]
-        $("#9,#10,#11,#12,#1,#2,#3,#4,#5").css('background-color', 'grey !important');//make all grey}
+    if (isItPmConcat === "pm" && isIt6pm === "yes") { //if pm, then all divs are grey [****!important not working]
+        console.log("!!!!!!!!!!!")
+        $("#9,#10,#11,#12,#1,#2,#3,#4,#5").css('background-color', 'grey');//make all grey
+        $("#input9,#input10, #input11, #input12, #input1, #input2, #input3, #input4, #input5").css('background-color', 'grey');
+
         //set that it's past five
         var isItPast5 = "yes";
     }
-    else if (isItPmConcat == "am") { var isItPast5 = "no"; }
+    else if (isItPmConcat === "am") { var isItPast5 = "no"; }
     if (isItPast5 != "yes") {
 
 
         console.log("current hour: " + currentHour)
-        if (currentHour == "9") {
+        if (currentHour === "9") {
             $("#9").css("background-color", "red");
             $("#input9").css("background-color", "red")
 
@@ -55,7 +66,7 @@ function checkTime() {
             $("#input10, #input11, #input12, #input1, #input2, #input3, #input4, #input5").css("background-color", "green")
 
         }
-        if (currentHour == "10") {
+        if (currentHour === "10") {
             $("#9").css("background-color", "grey")
             $("input9").css("background-color", "grey")
 
@@ -66,7 +77,7 @@ function checkTime() {
             $("#input11, #input12, #input1, #input2, #input3, #input4, #input5").css("background-color", "green")
 
         }
-        if (currentHour == "11") {
+        if (currentHour === "11") {
             $("#9,#10").css("background-color", "grey")
             $("#input9, #input10").css("background-color", "grey")
 
@@ -75,7 +86,7 @@ function checkTime() {
             $("#input12, #input1, #input2, #input3, #input4, #input5").css("background-color", "green")
 
         }
-        if (currentHour == "12") {
+        if (currentHour === "12") {
             $("#9,#10,#11").css("background-color", "grey")
             $("#input9, #input10, #input11").css("background-color", "grey")
 
@@ -85,7 +96,7 @@ function checkTime() {
 
 
         }
-        if (currentHour == "1") {
+        if (currentHour === "1") {
             $("#9,#10,#11,#12").css("background-color", "grey")
             $("#input9, #input10, #input11, #input12").css("background-color", "grey")
 
@@ -95,7 +106,7 @@ function checkTime() {
 
 
         }
-        if (currentHour == "2") {
+        if (currentHour === "2") {
             $("#9,#10,#11,#12,#1").css("background-color", "grey")
             $("#input9, #input10, #input11, #input12, #input1").css("background-color", "grey")
 
@@ -105,7 +116,7 @@ function checkTime() {
 
 
         }
-        if (currentHour == "3") {
+        if (currentHour === "3") {
             $("#9, #10, #11, #12, #1, #2").css("background-color", "grey")
             $("#input9, #input10, #input11, #input12, #input1, #input2").css("background-color", "grey")
             $("#3").css("background-color", "red");
@@ -113,7 +124,7 @@ function checkTime() {
             $("#4, #5").css("background-color", "green")
             $("#input4, #input5").css("background-color", "green")
         }
-        if (currentHour == "4") {
+        if (currentHour === "4") {
             $("#9, #10, #11, #12, #1, #2,#3").css("background-color", "grey")
             $("#input9, #input10, #input11, #input12, #input1, #input2, #input3").css("background-color", "grey")
 
@@ -122,7 +133,7 @@ function checkTime() {
             $("#input5").css("background-color", "green")
 
         }
-        if (currentHour == "5") {
+        if (currentHour === "5") {
             $("#9, #10, #11, #12, #1, #2,#3,#4").css("background-color", "grey")
             $("#input9, #input10, #input11, #input12, #input1, #input2, #input3, #input4, #input5").css("background-color", "grey")
 
@@ -213,85 +224,85 @@ var currentInput5 = " ";
 function retrieveData() {   //9am input retrieved from local storage
     if (localStorage.getItem("9am") != null) {
         currentInput9 = localStorage.getItem("9am");
-        document.getElementById("input9").placeholder = currentInput9;
+        document.getElementById("input9").value = currentInput9;
     }
-    else if ((localStorage.getItem("9am") == null)) {
-        document.getElementById("input9").placeholder = "Enter activity here."
+    else if ((localStorage.getItem("9am") === null)) {
+        document.getElementById("input9").value = "Enter activity here."
 
     }
 
 
     if (localStorage.getItem("10am") != null) {
         currentInput10 = localStorage.getItem("10am");
-        document.getElementById("input10").placeholder = currentInput10;
+        document.getElementById("input10").value = currentInput10;
 
     }
-    else if (localStorage.getItem("10am") == null) {
-        document.getElementById("input10").placeholder = "Enter activity here."
+    else if (localStorage.getItem("10am") === null) {
+        document.getElementById("input10").value = "Enter activity here."
     }
 
     if (localStorage.getItem("11am") != null) {
         currentInput11 = localStorage.getItem("11am");
-        document.getElementById("input11").placeholder = currentInput11;
+        document.getElementById("input11").value = currentInput11;
 
     }
-    else if (localStorage.getItem("11am") == null) {
-        document.getElementById("input11").placeholder = "Enter activity here."
+    else if (localStorage.getItem("11am") === null) {
+        document.getElementById("input11").value = "Enter activity here."
     }
 
     if (localStorage.getItem("12am") != null) {
         currentInput12 = localStorage.getItem("12am");
-        document.getElementById("input12").placeholder = currentInput12;
+        document.getElementById("input12").value = currentInput12;
 
     }
-    else if (localStorage.getItem("12am") == null) {
-        document.getElementById("input12").placeholder = "Enter activity here."
+    else if (localStorage.getItem("12am") === null) {
+        document.getElementById("input12").value = "Enter activity here."
     }
 
     if (localStorage.getItem("1pm") != null) {
         currentInput1 = localStorage.getItem("1pm");
-        document.getElementById("input1").placeholder = currentInput1;
+        document.getElementById("input1").value = currentInput1;
 
     }
-    else if (localStorage.getItem("1pm") == null) {
-        document.getElementById("input1").placeholder = "Enter activity here."
+    else if (localStorage.getItem("1pm") === null) {
+        document.getElementById("input1").value = "Enter activity here."
     }
 
     if (localStorage.getItem("2pm") != null) {
         currentInput2 = localStorage.getItem("2pm");
-        document.getElementById("input2").placeholder = currentInput2;
+        document.getElementById("input2").value = currentInput2;
 
     }
-    else if (localStorage.getItem("2pm") == null) {
-        document.getElementById("input2").placeholder = "Enter activity here."
+    else if (localStorage.getItem("2pm") === null) {
+        document.getElementById("input2").value = "Enter activity here."
     }
 
     if (localStorage.getItem("3pm") != null) {
         currentInput3 = localStorage.getItem("3pm");
-        document.getElementById("input3").placeholder = currentInput3;
+        document.getElementById("input3").value = currentInput3;
 
     }
-    else if (localStorage.getItem("3pm") == null) {
-        document.getElementById("input3").placeholder = "Enter activity here."
+    else if (localStorage.getItem("3pm") === null) {
+        document.getElementById("input3").value = "Enter activity here."
     }
 
 
     if (localStorage.getItem("4pm") != null) {
         currentInput4 = localStorage.getItem("4pm");
-        document.getElementById("input4").placeholder = currentInput4;
+        document.getElementById("input4").value = currentInput4;
 
     }
-    else if (localStorage.getItem("4pm") == null) {
-        document.getElementById("input4").placeholder = "Enter activity here."
+    else if (localStorage.getItem("4pm") === null) {
+        document.getElementById("input4").value = "Enter activity here."
     }
 
     if (localStorage.getItem("5pm") != null) {
         currentInput5 = localStorage.getItem("5pm");
-        document.getElementById("input5").placeholder = currentInput5;
+        document.getElementById("input5").value = currentInput5;
 
     }
-    else if (localStorage.getItem("5pm") == null) {
-        document.getElementById("input5").placeholder = "Enter activity here."
+    else if (localStorage.getItem("5pm") === null) {
+        document.getElementById("input5").value = "Enter activity here."
     }
 
 
